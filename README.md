@@ -13,7 +13,7 @@ Primeira entrada e solicitado o *nome do projeto*, existe a opção de não pass
  
 Em seguida a entrada é solicitado a quantidade de módulos, os módulos são arquivos gerado dinamicamente com a extensão '.tscproj' que utilizado como projetos de gravação do CAMTASIA, caso não seja passado um valor inteiro **positivo** e tomado o valor padrão 0 'ZERO'.
  
-Agora passando para próxima parte da entrada, que diz respeito os diretórios se é necessário remover uma ou mais pastas **default** ou adicionar uma ou mais à pilha.
+Agora passando para próxima parte da entrada, que diz respeito aos diretórios se é necessário remover uma ou mais pastas **default** ou adicionar uma ou mais à pilha.
 
 A lista default de diretórios:
 - IMAGENS
