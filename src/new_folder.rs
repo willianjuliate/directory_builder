@@ -67,16 +67,17 @@ impl NewFolder {
             }
         }
     }
-    pub fn create_dir_and_files(&self) {
+    pub fn create_dir_and_files(&self) -> String {
         let name_project = &self.name_project;
         match fs::read_dir(format!("./{}", name_project)) {
-            Ok(_) => println!("# ESTE PROJETO JÁ EXISTE #"),
+            Ok(_) => return format!("# PROJETO '{}' JÁ EXISTE! #", name_project),
             Err(_) => {
                 for dir in &self.folders_default {
                     let root = format!("./{}/{}", name_project, dir);
                     fs::create_dir_all(root).expect("# NÃO FOI POSSÍVEL CRIAR OS DIR's! #");
                 }
                 self.create_file_tscproj();
+                return format!("# PROJETO '{}' CONSTRUÍDO #", name_project);
             }
         }
     }

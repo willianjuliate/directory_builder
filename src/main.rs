@@ -17,7 +17,7 @@ fn main() {
         Err(_) => println!("VALOR PADRÃO DEFINIDO '0' "),
     };
     loop {
-        println!("\n-------------------------------- DIREÓRIOS --------------------------------");
+        println!("\n------------------------------------- DIREÓRIOS ------------------------------------");
         println!(
             "ADICIONAR NOVA(S) PASTA(S) (A), DELETAR PASTA(S) PADRÃO (D) OU DEIXE VAZIO PARA SAIR"
         );
@@ -42,8 +42,8 @@ fn main() {
                 continue;
             }
             "" => {
-                new.create_dir_and_files();
-                println!("# PROJETO CONSTRUÍDO #");
+                let saida = new.create_dir_and_files();
+                println!("{}", saida);
                 break;
             }
             _ => {
