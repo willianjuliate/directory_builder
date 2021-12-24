@@ -114,12 +114,12 @@ impl NewFolder {
     "audioFormatSampleRate": 44100,
     "width": 1440.0,
     "height": 900.0,
-    "version": "4.0",
+    "version": "5.0",
     "editRate": 30,
     "authoringClientName": {
         "name": "Camtasia",
         "platform": "Windows",
-        "version": "20.0"
+        "version": "21.0"
     },
     "timeline": {
         "id": 1,
