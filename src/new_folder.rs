@@ -40,7 +40,7 @@ impl NewFolder {
     }
     pub fn add_new_folders(&mut self, names_folder: String) {
         if !names_folder.is_empty() {
-            for names_f in names_folder.split(", ") {
+            for names_f in names_folder.split(",") {
                 let name = names_f.trim().to_string();
                 if name != " ".to_string() && name != ",".to_string() {
                     self.folders_default.push(name);
@@ -84,7 +84,9 @@ impl NewFolder {
 
         println!("\n├─ {}", self.name_project);
         for dir in &self.folders_default {
-            println!("│     ├─ {}", dir);
+            if !dir.is_empty() {
+                println!("│     ├─ {}", dir);
+            }
         }
     }
 
