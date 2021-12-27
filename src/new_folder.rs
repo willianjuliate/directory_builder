@@ -1,7 +1,6 @@
-use std::{
-    fs::{self, File},
-    io::Write,
-};
+use std::fs;
+use std::fs::File;
+use std::io::Write;
 
 #[derive(Debug)]
 pub struct NewFolder {
@@ -9,7 +8,6 @@ pub struct NewFolder {
     quantity_modules: u32,
     folders_default: Vec<String>,
 }
-#[allow(dead_code)]
 impl NewFolder {
     pub fn new() -> NewFolder {
         NewFolder {
@@ -102,9 +100,7 @@ impl NewFolder {
     }
 
     fn create_file_tscproj(&self) {
-        let qtd_md = self.quantity_modules;
-        let name_project = &self.name_project;
-        let date = br#"{
+        let string = r#"{
     "title": "",
     "description": "",
     "author": "",
@@ -185,13 +181,16 @@ impl NewFolder {
         "calloutStyle": "Basic"
     }
 }"#;
-        for i in 0..qtd_md {
-            let mut root = format!("{}/{}_0{}.tscproj", name_project, name_project, i + 1);
-            if i >= 9 {
-                root = format!("{}/{}_{}.tscproj", name_project, name_project, i + 1);
-            }
-            let mut file = File::create(root).expect("# NÃO FOI POSSÍVEL CRIAR OS FILE's! #");
-            file.write_all(date).expect("ERROR!");
+
+        for i in 0..self.quantity_modules {
+            let root = format!(
+                "{}/{}_#{}.tscproj",
+                &self.name_project,
+                &self.name_project,
+                i + 1
+            );
+            let mut tscproj = File::create(root).expect("# NÃO FOI POSSÍVEL CRIAR OS FILE's! #");
+            write!(tscproj, "{}", string).expect("Err");
         }
     }
 }
