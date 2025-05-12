@@ -41,5 +41,3 @@ Os comandos para remover um ou mais diretórios são:
 - EXCLUIR
 
 Após escolher uma das opções disponível, a próxima entrada será os nomes dos diretórios que serão adicionadas ou removidas, se for mais que um diretório adicionado ou removido separar por **vírgula (,)** se for apenas um diretório não utilizar o separador (,).
-
-**23/12/2022**
